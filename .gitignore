@@ -1,0 +1,17 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Maven wrapper 
+# .mvn/ (SE SUBE)
+# mvnw (SE SUBE)
+# mvnw.cmd (SE SUBE)
+
+# IDEs / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Logs
+*.log
