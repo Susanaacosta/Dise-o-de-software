@@ -12,7 +12,7 @@
   <modules>
     <module>core-domain</module>
     <module>infra-persistence-jpa</module>
-    <module>app-api</module> <!-- para la 2ª entrega -->
+    <module>app-api</module>
   </modules>
 
   <properties>
@@ -22,7 +22,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- BOM de Spring Boot para alinear versiones en módulos que usan Spring -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>

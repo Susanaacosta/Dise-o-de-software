@@ -10,8 +10,8 @@
   </parent>
 
   <artifactId>app-api</artifactId>
-  <packaging>jar</packaging>
   <name>app-api</name>
+  <packaging>jar</packaging>
 
   <properties>
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -19,21 +19,59 @@
   </properties>
 
   <dependencies>
+    <!-- módulos internos -->
     <dependency>
       <groupId>com.itm</groupId>
       <artifactId>core-domain</artifactId>
       <version>${project.version}</version>
     </dependency>
+
     <dependency>
       <groupId>com.itm</groupId>
       <artifactId>infra-persistence-jpa</artifactId>
       <version>${project.version}</version>
     </dependency>
 
-    <!-- Starter base (añadiremos web/validation en la 2ª entrega) -->
+    <!-- Web REST -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- Actuator (health/info) -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
+    <!-- Swagger / OpenAPI UI -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.6.0</version>
+    </dependency>
+
+    <!-- Tests -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
